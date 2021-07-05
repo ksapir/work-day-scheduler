@@ -1,8 +1,7 @@
 var dayDisplayEl = $("#current-day");
 var containerEl = $('#time-block');
-// var textArea = $('.input')
 
-var btn = document.querySelector('.save');
+var save = $('.saveBtn');
 
 var hour9 = $('#firstInput');
 var saved9 = localStorage.getItem("hour9")
@@ -32,84 +31,114 @@ var hour17 = $('#ninthInput')
 var saved17 = localStorage.getItem("hour17")
 
 
-var currentTime = moment().format('H');
-var hourArray = [9,10,11,12,13,14,15,16,17]
+var currentTime = moment().format('HH');
 
+console.log(currentTime)
+console.log(typeof currentTime)
 
+var firstHour = $('#9');
+var secondHour = $('#10');
+var thirdHour = $('#11');
+var fourthHour = $('#12');
+var fifthHour = $('#13');
+var sixthHour = $('#15');
+var seventhHour = $('#16');
+var eigthHour = $('#17');
+var ningthHour = $('#18');
+
+var hourArray = [
+    firstHour,
+    secondHour,
+    thirdHour,
+    fourthHour,
+    fifthHour,
+    sixthHour,
+    seventhHour,
+    eigthHour,
+    ningthHour,
+];
+
+console.log(hourArray)
 
 // Displaying date
 function displayDate() {
     var today = moment().format("dddd, MMMM Do, YYYY");
     dayDisplayEl.text(today);
-}
-displayDate()
+};
+displayDate();
 
 
 // Color code time blocks based on whether passed, current or future
-
     for (var i = 0; i < hourArray.length; i++) {
-        if (currentTime> hourArray[i]){
-            $(".color-block").addClass("past")
-        } else if (currentTime<hourArray[i]){
-            $(".color-block").addClass("future")
-        } else if (currentTime === hourArray[i]){
+        
+        if (currentTime === hourArray[i]){
             $(".color-block").addClass("present")
-        }
+            $(".color-block").removeClass("past")
+            $(".color-block").removeClass("future")
+        } else if (currentTime > hourArray[i]){
+            $(".color-block").addClass("past")
+            $(".color-block").removeClass("future")
+            $(".color-block").removeClass("present")
+        } else if (currentTime < hourArray[i]){
+            $(".color-block").addClass("future")
+            $(".color-block").removeClass("past")
+            $(".color-block").removeClass("present")
+        } 
     };
 
 // Create ability to save text in each time block to local storage even when page is refreshed
-btn.addEventListener("click", function(event){
+save.on("click", function(event){
     event.preventDefault();
     localStorage.setItem("hour9", firstInput.value)  
 }
 );
-btn.addEventListener("click", function(event){
+save.on("click", function(event){
     event.preventDefault();
     localStorage.setItem("hour10", secondInput.value) 
 });
 
-btn.addEventListener("click", function(event){
+save.on("click", function(event){
     event.preventDefault();
     localStorage.setItem("hour11", thirdInput.value) 
 });
 
-btn.addEventListener("click", function(event){
+save.on("click", function(event){
     event.preventDefault();
     localStorage.setItem("hour12", fourthInput.value) 
 });
 
-btn.addEventListener("click", function(event){
+save.on("click", function(event){
     event.preventDefault();
     localStorage.setItem("hour13", fifthInput.value) 
 });
 
-btn.addEventListener("click", function(event){
+save.on("click", function(event){
     event.preventDefault();
     localStorage.setItem("hour14", sixthInput.value) 
 });
 
-btn.addEventListener("click", function(event){
+save.on("click", function(event){
     event.preventDefault();
     localStorage.setItem("hour15", seventhInput.value) 
 });
 
-btn.addEventListener("click", function(event){
+save.on("click", function(event){
     event.preventDefault();
     localStorage.setItem("hour16", eigthInput.value) 
 });
 
-btn.addEventListener("click", function(event){
+save.on("click", function(event){
     event.preventDefault();
     localStorage.setItem("hour17", ninthInput.value) 
 });
 
 
-hour9.textContent = saved9;
-hour10.textContent = saved10;
-hour11.textContent = saved11;
-hour12.textContent = saved12;
-hour13.textContent = saved13;
-hour14.textContent = saved14;
-hour15.textContent = saved15;
-hour16.textContent = saved16;
-hour17.textContent = saved17;
+hour9.text(saved9)
+hour10.text(saved10)
+hour11.text(saved11)
+hour12.text(saved12)
+hour13.text(saved13)
+hour14.text(saved14)
+hour15.text(saved15)
+hour16.text(saved16)
+hour17.text(saved17)
