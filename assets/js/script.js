@@ -30,21 +30,17 @@ var saved16 = localStorage.getItem("hour16")
 var hour17 = $('#ninthInput')
 var saved17 = localStorage.getItem("hour17")
 
-
 var currentTime = moment().format('HH');
-
-console.log(currentTime)
-console.log(typeof currentTime)
 
 var firstHour = $('#9');
 var secondHour = $('#10');
 var thirdHour = $('#11');
 var fourthHour = $('#12');
 var fifthHour = $('#13');
-var sixthHour = $('#15');
-var seventhHour = $('#16');
-var eigthHour = $('#17');
-var ningthHour = $('#18');
+var sixthHour = $('#14');
+var seventhHour = $('#15');
+var eigthHour = $('#16');
+var ningthHour = $('#17');
 
 var hourArray = [
     firstHour,
