@@ -7,4 +7,10 @@ The Work Day Scheduler:
 ![Screenshot if Work Day Scheduler](assets/images/work-day-scheduler.png)
 
 Technologies used:
-- 
+- MomentJS
+- Font Awesome
+- Google Fonts
+- Bootstrap
+- Jquery
+
+View app (here)[https://ksapir.github.io/work-day-scheduler/]
