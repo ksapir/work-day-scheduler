@@ -13,4 +13,4 @@ Technologies used:
 - Bootstrap
 - Jquery
 
-View app (here)[https://ksapir.github.io/work-day-scheduler/]
+View app [here](https://ksapir.github.io/work-day-scheduler/)
