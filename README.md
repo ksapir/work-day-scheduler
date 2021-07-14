@@ -14,3 +14,7 @@ Technologies used:
 - Jquery
 
 View app [here](https://ksapir.github.io/work-day-scheduler/)
+
+Contributors:
+ - Karen Pion
+   - karenlpion@gmail.com
